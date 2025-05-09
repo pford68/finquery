@@ -1,2 +1,4 @@
-mysql-connector==2.2.9
-packaging==24.1
+dotenv==0.9.9
+mysql-connector-python==9.3.0
+packaging==25.0
+python-dotenv==1.1.0
