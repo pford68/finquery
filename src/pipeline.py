@@ -29,16 +29,16 @@ except Exception as e:
 
 
 # Test connection via session
-try:
-    result = session.execute(text("SELECT * from transactions limit 10")).fetchall()
-    print("Session connection to RDS established successfully!")
-    print(f"Test query result: {result}")  # Should print [(1,)]
-except Exception as e:
-    print("Connection test failed:")
-    print(traceback.format_exc())
-finally:
-    session.close()
-    print("Session closed.")
+# try:
+#     result = session.execute(text("SELECT * from transactions limit 10")).fetchall()
+#     print("Session connection to RDS established successfully!")
+#     print(f"Test query result: {result}")  # Should print [(1,)]
+# except Exception as e:
+#     print("Connection test failed:")
+#     print(traceback.format_exc())
+# finally:
+#     session.close()
+#     print("Session closed.")
 
 # # List databases
 # try:
