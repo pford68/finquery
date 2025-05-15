@@ -8,9 +8,6 @@ from app.configuration import config
 conn = Connection()
 
 
-logging.getLogger(__name__).addHandler(logging.NullHandler())
-
-
 def get_sql_database():
     """Wrap SQLAlchemy engine in LangChain's SQLDatabase."""
     try:

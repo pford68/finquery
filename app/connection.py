@@ -6,8 +6,6 @@ import traceback
 
 from app.configuration import config as c
 
-logging.getLogger(__name__).addHandler(logging.NullHandler())
-
 
 class Connection:
     """Wrapper for a database connection"""
