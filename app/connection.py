@@ -21,7 +21,7 @@ class Connection:
                 pool_pre_ping=True  # Test connections before use
             )
             logging.info("Engine created successfully!")
-        except Exception as e:
+        except Exception:
             logging.error("Failed to create engine:")
             logging.error(traceback.format_exc())
 
@@ -29,7 +29,7 @@ class Connection:
             Session = sessionmaker(bind=self.engine)
             self.session = Session()
             logging.info("Session factory and instance created!")
-        except Exception as e:
+        except Exception:
             logging.error("Failed to create session:")
             logging.error(traceback.format_exc())
 
@@ -38,7 +38,7 @@ class Connection:
             result = self.session.execute(text(query))
             rows = result.fetchall()
             return rows
-        except Exception as e:
+        except Exception:
             logging.error("Connection tests failed:")
             logging.error(traceback.format_exc())
             return None

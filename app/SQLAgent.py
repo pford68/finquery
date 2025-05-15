@@ -40,7 +40,6 @@ class SQLAgent:
     _agent = None
 
     def __init__(self):
-        super().__init__()
         try:
             db = get_sql_database()
             llm = initialize_llm()
@@ -60,8 +59,8 @@ class SQLAgent:
         """Execute natural language query and return formatted response."""
         try:
             response = self._agent.run(query)
-            # TODO: Format raw SQL output into natural language
 
+            # Format raw SQL output into natural language
             if "No results found" in response:
                 return f"Sorry, I couldn’t find any data for: '{query}'."
             else:
