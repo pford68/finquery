@@ -22,16 +22,16 @@ class Connection:
             )
             logging.info("Engine created successfully!")
         except Exception:
-            logging.error("Failed to create engine:")
-            logging.error(traceback.format_exc())
+            stacktrace = traceback.format_exc()
+            logging.error(f"Failed to create engine:\n{stacktrace}")
 
         try:
             Session = sessionmaker(bind=self.engine)
             self.session = Session()
             logging.info("Session factory and instance created!")
         except Exception:
-            logging.error("Failed to create session:")
-            logging.error(traceback.format_exc())
+            stacktrace = traceback.format_exc()
+            logging.error(f"Failed to create session:\n{stacktrace}")
 
     def execute(self, query):
         try:
@@ -39,8 +39,8 @@ class Connection:
             rows = result.fetchall()
             return rows
         except Exception:
-            logging.error("Connection tests failed:")
-            logging.error(traceback.format_exc())
+            stacktrace = traceback.format_exc()
+            logging.error(f"Connection tests failed:\n{stacktrace}")
             return None
         finally:
             self.session.close()
